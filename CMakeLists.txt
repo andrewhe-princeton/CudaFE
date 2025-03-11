@@ -9,7 +9,7 @@ set(CMAKE_C_COMPILER "clang")
 set(CMAKE_CXX_COMPILER "clang++")
 
 list(APPEND CMAKE_PREFIX_PATH "${LLVM_ROOT}/share/llvm/cmake")
-find_package(LLVM REQUIRED CONFIG)
+find_package(LLVM 14 REQUIRED CONFIG)
 
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
@@ -25,5 +25,5 @@ list(APPEND TVM_LINKER_LIBS LLVM)
 #llvm_map_components_to_libnames(llvm_libs passes)
 
 add_subdirectory(MergeKernel)
-add_subdirectory(NoelleReduction)
-add_subdirectory(NoelleDOALL)
+# add_subdirectory(NoelleReduction)
+# add_subdirectory(NoelleDOALL)
